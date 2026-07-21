@@ -171,14 +171,11 @@ function initLevel(){
 
 // ── PLAYER ANIMATION ─────────────────────────────────────────
 function getPlayerImg(){
-  const moving=Math.abs(scrollSpeed)>0.1;
-  if(!moving)return IMG.aviv_standing;
   player.animTimer++;
-  if(player.animTimer>10){player.animTimer=0;player.animFrame=(player.animFrame+1)%2;}
+  if(player.animTimer>12){player.animTimer=0;player.animFrame=(player.animFrame+1)%2;}
   return player.animFrame===0?IMG.aviv_walk_right:IMG.aviv_walk_left;
 }
 function getLukaImg(){
-  player.animTimer;
   return player.animFrame===0?(IMG.luka_walk_right||IMG.luka_standing):(IMG.luka_walk_left||IMG.luka_standing);
 }
 
