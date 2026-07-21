@@ -245,18 +245,15 @@ function drawObstacles(){
     if(o.dead)return;
     const ox=o.x-scrollX;
     if(ox<-100||ox>W+100)return;
-   // cat stays still
-   const img=o.type==='road'?IMG.road:IMG.cat;
-if(o.type==='road'){
-  // Road: fixed display size, centered on ground line
-  const rw=80, rh=120;
-  ctx.drawImage(img,ox,GROUND()-rh+18,rw,rh);
-} else {
-  ctx.drawImage(img,ox,GROUND()-o.h,o.w,o.h);
-}
-    else{
-      ctx.fillStyle=o.type==='road'?'#555':'#E76F51';
-      ctx.fillRect(ox,oy,o.w,o.h);
+    // cat stays still — no movement
+    if(o.type==='road'){
+      const rw=80,rh=100;
+      if(IMG.road){ctx.drawImage(IMG.road,ox,GROUND()-rh+20,rw,rh);}
+      else{ctx.fillStyle='#555';ctx.fillRect(ox,GROUND()-rh+20,rw,rh);}
+    } else {
+      const img=IMG.cat;
+      if(img){ctx.drawImage(img,ox,GROUND()-o.h,o.w,o.h);}
+      else{ctx.fillStyle='#E76F51';ctx.fillRect(ox,GROUND()-o.h,o.w,o.h);}
     }
   });
 }
