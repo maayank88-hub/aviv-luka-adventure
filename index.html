@@ -249,7 +249,7 @@ function drawObstacles(){
     }
     const img=o.type==='road'?IMG.road:IMG.cat;
     // Road sits ON the grass (at ground level), cat stands on ground
-    const oy=o.type==='road'?GROUND()-o.h+5:GROUND()-o.h;
+    const oy=o.type==='road'?GROUND()-o.h+22:GROUND()-o.h;
     if(img){ctx.drawImage(img,ox,oy,o.w,o.h);}
     else{
       ctx.fillStyle=o.type==='road'?'#555':'#E76F51';
