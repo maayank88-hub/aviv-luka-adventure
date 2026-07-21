@@ -245,10 +245,7 @@ function drawObstacles(){
     if(o.dead)return;
     const ox=o.x-scrollX;
     if(ox<-100||ox>W+100)return;
-    if(o.type==='cat'){
-      o.x+=o.vx;
-      if(o.x-scrollX<50||o.x-scrollX>W-50)o.vx*=-1;
-    }
+   // cat stays still
     const img=o.type==='road'?IMG.road:IMG.cat;
     const oy=o.type==='road'?GROUND():GROUND()-o.h;
     if(img){ctx.drawImage(img,ox,oy,o.w,o.h);}
