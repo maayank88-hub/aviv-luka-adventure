@@ -63,7 +63,7 @@ function loadImg(key,src){return new Promise(res=>{const i=new Image();i.onload=
 
 // ── CONSTANTS ─────────────────────────────────────────────────
 const GRAVITY=0.55;
-const JUMP_FORCE=-15;
+const JUMP_FORCE=-18;
 const GROUND=()=>H-100;
 const PLAYER_W=70;
 const PLAYER_H=100;
@@ -75,7 +75,7 @@ const player={x:120,y:0,vy:0,onGround:false,invincible:0,animFrame:0,animTimer:0
 
 // ── STATE ─────────────────────────────────────────────────────
 let state='loading',score=0,lives=3,frame=0,raf;
-let scrollX=0,scrollSpeed=2.2;
+let scrollX=0,scrollSpeed=1.6;
 let obstacles=[],snacks=[],decor=[],clouds=[];
 let bgX=0;
 
@@ -105,7 +105,7 @@ function drawSplash(){
 // ── LEVEL GENERATION ─────────────────────────────────────────
 function initLevel(){
   obstacles=[];snacks=[];decor=[];clouds=[];
-  scrollX=0;scrollSpeed=2.2;frame=0;
+  scrollX=0;scrollSpeed=1.6;frame=0;
   player.x=120;player.y=GROUND()-PLAYER_H;
   player.vy=0;player.onGround=true;player.invincible=0;player.animFrame=0;
 
