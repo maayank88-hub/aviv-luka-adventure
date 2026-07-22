@@ -227,21 +227,23 @@ function drawDecor(){
   });
 }
 
-function drawObstacles(){
+function drawRoadObstacles(){
   obstacles.forEach(o=>{
-    if(o.dead)return;
+    if(o.dead||o.type!=='road')return;
     const ox=o.x-scrollX;
     if(ox<-100||ox>W+100)return;
-    // cat stays still — no movement
-    if(o.type==='road'){
-      const rw=80,rh=100;
-      if(IMG.road){ctx.drawImage(IMG.road,ox,GROUND()+8,rw,rh);}
-      else{ctx.fillStyle='#555';ctx.fillRect(ox,GROUND()+8,rw,rh);}
-    } else {
-      const img=IMG.cat;
-      if(img){ctx.drawImage(img,ox,GROUND()-o.h,o.w,o.h);}
-      else{ctx.fillStyle='#E76F51';ctx.fillRect(ox,GROUND()-o.h,o.w,o.h);}
-    }
+    const rw=80,rh=100;
+    if(IMG.road){ctx.drawImage(IMG.road,ox,GROUND()+8,rw,rh);}
+    else{ctx.fillStyle='#555';ctx.fillRect(ox,GROUND()+8,rw,rh);}
+  });
+}
+function drawCatObstacles(){
+  obstacles.forEach(o=>{
+    if(o.dead||o.type!=='cat')return;
+    const ox=o.x-scrollX;
+    if(ox<-100||ox>W+100)return;
+    if(IMG.cat){ctx.drawImage(IMG.cat,ox,GROUND()-o.h,o.w,o.h);}
+    else{ctx.fillStyle='#E76F51';ctx.fillRect(ox,GROUND()-o.h,o.w,o.h);}
   });
 }
 
