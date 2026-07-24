@@ -93,7 +93,7 @@ const player={x:120,y:0,vy:0,onGround:false,invincible:0,animFrame:0,animTimer:0
 
 // ── STATE ─────────────────────────────────────────────────────
 let state='loading',score=0,lives=3,frame=0,raf,level=1;
-let scrollX=0,scrollSpeed=1.8;
+let scrollX=0,scrollSpeed=2.0;
 let obstacles=[],snacks=[],decor=[],clouds=[];
 
 // ── SPLASH ────────────────────────────────────────────────────
@@ -444,7 +444,7 @@ function loop(){update();render();raf=requestAnimationFrame(loop);}
 
 function startGame(){
   score=0; lives=3; level=1;
-  scrollSpeed=1.8;
+  scrollSpeed=2.0;
   document.getElementById('sc').textContent='0';
   updateLives();
   initLevel();
