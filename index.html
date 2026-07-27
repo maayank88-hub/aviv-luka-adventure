@@ -86,7 +86,7 @@ function loadImg(key,src){
 
 // ── CONSTANTS ─────────────────────────────────────────────────
 const GRAVITY=0.55;
-const JUMP_FORCE=-22;
+const JUMP_FORCE=-25;
 const GROUND=()=>H-100;
 const PLAYER_W=70;
 const PLAYER_H=100;
@@ -99,7 +99,7 @@ const player={x:120,y:0,vy:0,onGround:false,invincible:0,animFrame:0,animTimer:0
 
 // ── STATE ─────────────────────────────────────────────────────
 let state='loading',score=0,lives=3,frame=0,raf,level=1;
-let scrollX=0,scrollSpeed=1.8;
+let scrollX=0,scrollSpeed=2.2;
 let obstacles=[],snacks=[],decor=[],clouds=[];
 
 // ── SPLASH ────────────────────────────────────────────────────
@@ -408,7 +408,7 @@ function levelComplete(){
   setTimeout(()=>{
     document.getElementById('levelcomplete-screen').style.display='none';
     level++;
-    scrollSpeed=1.5+level*0.3;
+    scrollSpeed=2.2+level*0.3;
     initLevel();
     state='playing';
     loop();
