@@ -1,0 +1,23 @@
+{
+  "name": "Aviv & Luka's Adventure",
+  "short_name": "Aviv & Luka",
+  "description": "Help Aviv & Luka collect snacks and avoid obstacles!",
+  "start_url": "/aviv-luka-adventure/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#1a1a2e",
+  "theme_color": "#FFD166",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
